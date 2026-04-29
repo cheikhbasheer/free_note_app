@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1e3a5f;
+  --primary-light: #2563eb;
+  --accent: #16a34a;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --text-muted: #64748b;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white; }
+  .bulletin-a4 {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm 12mm;
+    margin: 0;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-after: always;
+  }
+}
+
+@media screen {
+  .print-only { display: none; }
+}
+
+/* Note input styling */
+.notes-table input[type="number"] {
+  -moz-appearance: textfield;
+}
+.notes-table input[type="number"]::-webkit-inner-spin-button,
+.notes-table input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
